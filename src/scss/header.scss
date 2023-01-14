@@ -4,10 +4,20 @@
 		 background-color: #27262A; 
 	}
 
-	// padding-top: rem(30);
-	// padding-bottom: rem(30);
 
 	._icon_logo {
+		font-size: rem(40);
+		color: $pinkColor;
+		transition: color 0.3s ease 0s;
+
+		@media (any-hover: hover){
+			&:hover{
+				color: $whiteColor;
+			}
+		}
+	}
+
+	._icon_logoMin {
 		font-size: rem(40);
 		color: $pinkColor;
 		transition: color 0.3s ease 0s;
@@ -35,7 +45,7 @@
 
 	&__menu {
 		flex: auto;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet){
 			  display: flex;
 			  justify-content: center;
 			  order: 3;
@@ -57,6 +67,14 @@
 		font-weight: 700;
 		font-size: rem(16);
 		line-height: math.div(17, 16);
+		transition: color 0.3s ease 0s;
+
+		@media (any-hover: hover){
+			&:hover{
+				background-color: $whiteColor;
+				color: $pinkColor;
+			}
+		}
 	}
 }
 
@@ -65,18 +83,26 @@
 	&__body {
 		@media (max-width: $mobile) {
 			  position: fixed;
-			  top: 0;
-			  left: 0;
+			  top: rem(118);
+			  left: 5%;
+			  width: 90%;
+			  height: 90%;
+			  overflow: auto;
+			  background-color: #333333;
 		}
 		
 	}
 
 	&__list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: end;
-		column-gap: rem(47);
-		row-gap: rem(20);
+		@media (min-width:$mobile){
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: end;
+			// column-gap: rem(47);
+			row-gap: rem(20);
+			@include adaptiveValue("column-gap", 56, 15, 0, 1200, 768);
+		}
+
 	}
 
 	&__item {
