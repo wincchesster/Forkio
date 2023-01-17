@@ -8,7 +8,7 @@ import { flsModules } from "./modules.js";
 // Повертає true, якщо пристрій мобільний
 // Повертає false, якщо пристрій десктопний
 function isItMobile() {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 767) {
         return true;
     } else {
         return false;

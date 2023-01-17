@@ -34,13 +34,12 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: rem(48);
+		gap: rem(36);
 		padding: rem(10) rem(20);
 		min-height: 115px;
+		z-index: 10;
 
-		@media (max-width:$tablet){
-			  gap: rem(20);
-		}
+
 	}
 
 	&__menu {
@@ -50,20 +49,21 @@
 			  justify-content: center;
 			  order: 3;
 		}
+
 		
 	}
 
 	&__actions {
-		display: flex;
-		align-items: center;
-		gap: rem(20);
+		// display: flex;
+		// align-items: center;
+		// gap: rem(20);
 	}
 
 	&__button {
 		border-radius: rem(40);
 		color: $whiteColor;
 		background-color: $pinkColor;
-		padding: rem(11) rem(30);
+		padding: rem(11) rem(35);
 		font-weight: 700;
 		font-size: rem(16);
 		line-height: math.div(17, 16);
@@ -75,22 +75,54 @@
 				color: $pinkColor;
 			}
 		}
+
+		@media (max-width: $mobile){
+			padding: rem(11) rem(20);
+		}
 	}
 }
 
 .menu {
+
+	@media (max-width: $mobile) {
+		position: fixed;
+		top: -100%;
+		left: 5%;
+		width: 90%;
+		height: auto;
+		overflow: auto;
+		background-color: #333333;
+		transition: all 0.2s ease 0s;
+		z-index: -2;
+
+		&::before {
+			content: "";
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			height: rem(60);
+			background-color: #333333;
+		}
+
+		.menu-open & {
+			top: rem(114);
+			left: 5%;
+			width: 90%;
+			height: auto;
+			overflow: auto;
+			background-color: #333333;
+			transition: all 0.2s ease 0s;
+			z-index: -1;
+		}
+	
+  }
 	
 	&__body {
-		@media (max-width: $mobile) {
-			  position: fixed;
-			  top: rem(118);
-			  left: 5%;
-			  width: 90%;
-			  height: 90%;
-			  overflow: auto;
-			  background-color: #333333;
+
+		@media (max-width:$mobile){
+			width: 100%;
 		}
-		
 	}
 
 	&__list {
@@ -98,14 +130,24 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: end;
-			// column-gap: rem(47);
 			row-gap: rem(20);
-			@include adaptiveValue("column-gap", 56, 15, 0, 1200, 768);
+			@include adaptiveValue("column-gap", 57, 46, 0, 1200, 768);
 		}
 
 	}
 
 	&__item {
+
+		@media (max-width:$mobile){
+			display: flex;
+			align-items: center;
+			height: rem(60);
+			padding-left: rem(35);
+			border-bottom: #3e3d3d 3px solid;
+			padding: rem(45) rem(35);
+			color: #333333;
+
+	  }
 	}
 
 	&__link {
@@ -120,6 +162,37 @@
 				color: $whiteColor;
 			}
 		}
+
+		@media (max-width:$mobile){
+			font-weight: 400;
+			font-size: rem(26);
+			color: $whiteColor; 
+
+		}
+
+
+	
+	}
+
+	&__link-active {
+		@media (max-width:$mobile){
+			position: relative;	
+			color: $pinkColor; 
+		
+
+			// вертикальна лінія біля тексту з класом "menu__link-active" з лівого боку
+			&::before {
+				content: "";
+				position: absolute;
+				top: auto;
+				left: 0;
+				width: rem(6);
+				height: rem(35);
+				background-color: $pinkColor;
+			}
+
+
+		}
 	}
 }
 
@@ -133,9 +206,10 @@
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: rem(30);
-		height: rem(18);
+		width: rem(40);
+		height: rem(22);
 		z-index: 5;
+		
 		@media (any-hover: none) {
 			cursor: default;
 		}
@@ -146,12 +220,14 @@
 			transition: all 0.3s ease 0s;
 			right: 0;
 			position: absolute;
-			width: 100%;
-			height: rem(2);
+			width: 65%;
+			height: rem(3);
+			border-radius: 10px;
 			background-color: #fff ;
 		}
 		&::before {
-			top: 0;
+			top: rem(1);
+			width: 40%;
 		}
 		&::after {
 			bottom: 0;
@@ -167,10 +243,12 @@
 			&::after {
 			}
 			&::before {
+				width: 70%;
 				top: calc(50% - rem(1));
 				transform: rotate(-45deg);
 			}
 			&::after {
+				width: 70%;
 				bottom: calc(50% - rem(1));
 				transform: rotate(45deg);
 			}

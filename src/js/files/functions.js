@@ -133,14 +133,14 @@ export let _slideToggle = (target, duration = 500) => {
 }
 // Допоміжні модулі блокування прокручування та стрибка ====================================================================================================================================================================================================================================================================================
 export let bodyLockStatus = true;
-export let bodyLockToggle = (delay = 500) => {
+export let bodyLockToggle = (delay = 100) => {
 	if (document.documentElement.classList.contains('lock')) {
 		bodyUnlock(delay);
 	} else {
 		bodyLock(delay);
 	}
 }
-export let bodyUnlock = (delay = 500) => {
+export let bodyUnlock = (delay = 100) => {
 	let body = document.querySelector("body");
 	if (bodyLockStatus) {
 		let lock_padding = document.querySelectorAll("[data-lp]");
@@ -158,7 +158,7 @@ export let bodyUnlock = (delay = 500) => {
 		}, delay);
 	}
 }
-export let bodyLock = (delay = 500) => {
+export let bodyLock = (delay = 100) => {
 	let body = document.querySelector("body");
 	if (bodyLockStatus) {
 		let lock_padding = document.querySelectorAll("[data-lp]");
