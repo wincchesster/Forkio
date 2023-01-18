@@ -150,6 +150,27 @@
 	  }
 	}
 
+	&__item-active {
+		@media (max-width:$mobile){
+			position: relative;	
+			color: $pinkColor; 
+		
+
+			// вертикальна лінія біля тексту з класом "menu__link-active" з лівого боку
+			&::before {
+				content: "";
+				position: absolute;
+				top: auto;
+				left: 0;
+				width: rem(6);
+				height: rem(35);
+				background-color: $pinkColor;
+			}
+
+
+		}
+	}
+
 	&__link {
 		font-weight: 700;
 		line-height: math.div(15, 16);
@@ -176,22 +197,7 @@
 
 	&__link-active {
 		@media (max-width:$mobile){
-			position: relative;	
 			color: $pinkColor; 
-		
-
-			// вертикальна лінія біля тексту з класом "menu__link-active" з лівого боку
-			&::before {
-				content: "";
-				position: absolute;
-				top: auto;
-				left: 0;
-				width: rem(6);
-				height: rem(35);
-				background-color: $pinkColor;
-			}
-
-
 		}
 	}
 }
