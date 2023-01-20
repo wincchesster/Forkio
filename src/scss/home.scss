@@ -1,3 +1,41 @@
 //====================================================================================================
+// Home
+.page {
+
+    
+    // .page__main
+    &__main {
+    }
+}
+.main-intro {
+    // .main-intro__container
+    &__container {
+    }
+    // .main-intro__content
+    &__content {
+    }
+    // .main-intro__title
+    &__title {
+    }
+    // .main-intro__subtitle
+    &__subtitle {
+    }
+    // .main-intro__text
+    &__text {
+    }
+    // .main-intro__image
+    &__image {
+        // картинка на фоні
+        img {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+
+    }
+}
 
 //====================================================================================================

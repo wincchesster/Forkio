@@ -1,5 +1,7 @@
 //====================================================================================================
 .header {
+	background-color: black;
+
 	@media (max-width:$tablet){
 		 background-color: #27262A; 
 	}
@@ -53,11 +55,11 @@
 		
 	}
 
-	&__actions {
-		// display: flex;
-		// align-items: center;
-		// gap: rem(20);
-	}
+	// &__actions {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	gap: rem(20);
+	// }
 
 	&__button {
 		border-radius: rem(40);
@@ -155,7 +157,6 @@
 			position: relative;	
 			color: $pinkColor; 
 		
-
 			// вертикальна лінія біля тексту з класом "menu__link-active" з лівого боку
 			&::before {
 				content: "";
@@ -166,7 +167,6 @@
 				height: rem(35);
 				background-color: $pinkColor;
 			}
-
 
 		}
 	}

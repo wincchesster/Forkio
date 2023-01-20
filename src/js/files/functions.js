@@ -56,7 +56,7 @@ export function fullVHfix() {
 	}
 }
 // Допоміжні модулі плавного розкриття та закриття об'єкта ======================================================================================================================================================================
-export let _slideUp = (target, duration = 500, showmore = 0) => {
+export let _slideUp = (target, duration = 300, showmore = 0) => {
 	if (!target.classList.contains('_slide')) {
 		target.classList.add('_slide');
 		target.style.transitionProperty = 'height, margin, padding';
@@ -89,7 +89,7 @@ export let _slideUp = (target, duration = 500, showmore = 0) => {
 		}, duration);
 	}
 }
-export let _slideDown = (target, duration = 500, showmore = 0) => {
+export let _slideDown = (target, duration = 300, showmore = 0) => {
 	if (!target.classList.contains('_slide')) {
 		target.classList.add('_slide');
 		target.hidden = target.hidden ? false : null;
@@ -124,7 +124,7 @@ export let _slideDown = (target, duration = 500, showmore = 0) => {
 		}, duration);
 	}
 }
-export let _slideToggle = (target, duration = 500) => {
+export let _slideToggle = (target, duration = 300) => {
 	if (target.hidden) {
 		return _slideDown(target, duration);
 	} else {

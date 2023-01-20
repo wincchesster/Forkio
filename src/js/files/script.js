@@ -19,14 +19,24 @@ function isItMobile() {
 // поміняти клас на "_icon_logoMin" для мобільних пристроїв, або на "_icon_logo" для десктопу та планшетів 
 function logoChanger() {
     if (isItMobile()) {
-        document.querySelector(".header__logo").classList.toggle("_icon_logoMin");
+        document.querySelector(".header__logo").classList.add("_icon_logoMin");
+        document.querySelector(".header__logo").classList.remove("_icon_logo");
       } else {
-        document.querySelector(".header__logo").classList.toggle("_icon_logo");
+        document.querySelector(".header__logo").classList.add("_icon_logo");
+        document.querySelector(".header__logo").classList.remove("_icon_logoMin");
       }
-      
+
 }
 
-logoChanger();
+
+
+// logoChanger();
+
+window.onload = logoChanger;
+window.onresize = logoChanger;
+
+
+
 
 
 
