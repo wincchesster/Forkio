@@ -55,11 +55,6 @@
 		
 	}
 
-	// &__actions {
-	// 	display: flex;
-	// 	align-items: center;
-	// 	gap: rem(20);
-	// }
 
 	&__button {
 		border-radius: rem(40);
@@ -190,9 +185,6 @@
 			color: $whiteColor; 
 
 		}
-
-
-	
 	}
 
 	&__link-active {
@@ -245,9 +237,9 @@
 			span {
 				width: 0;
 			}
-			&::before,
-			&::after {
-			}
+			// &::before,
+			// &::after {
+			// }
 			&::before {
 				width: 70%;
 				top: calc(50% - rem(1));
