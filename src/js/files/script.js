@@ -36,6 +36,28 @@ window.onload = logoChanger;
 window.onresize = logoChanger;
 
 
+// картинка з класом "pcr-slide" виїзжає з права на ліво на 20 пікселів при скролі вниз та виїзжає з ліва на право на 20 пікселів при скролі вверх
+
+function animateSlide() {
+    var picture = document.querySelector(".pcr-slide");
+    var pos = 0;
+    var id = setInterval(frame, 5);
+    function frame() {
+      if (pos == 20) {
+        clearInterval(id);
+      } else {
+        pos++; 
+        picture.style.right = pos + "px"; 
+      }
+    }
+  }
+  
+  window.addEventListener("scroll", animateSlide);
+
+
+
+
+
 
 
 

@@ -184,63 +184,84 @@
 //====================================================================================================
 // Features
 
-.page {
-    // .page__features
-    &__features {
-    }
-}
+
 .features {
+
+    background-color: #F4F4F4;
+    padding: rem(95) 0;
     // .features__container
     &__container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas: 
-        "list title"
-        "list picture";
+        display: flex;
+        justify-content: space-between;
+        gap: rem(30);
     }
     // .features__body
     &__body {
-        grid-area: list;
-     
+        display: flex;
+        width: 45%;
     }
     // .features__list
     &__list {
+
     }
     // .features__item
     &__item {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        grid-template-areas: 
-        "picture label"
-        "picture text";
-
+        position: relative;
+        display: flex;
+        
+        justify-content: space-between;
+        padding-bottom: rem(34);
+        gap: rem(30);
         img {
-            height: 100px;
+            position: absolute;
+            height: rem(80);
         }
     }
-    // .features__item-label
-    &__item-label {
+    // .features__content
+    &__content {
+        padding-left: rem(140);
+
+
     }
-    // .features__item-text
-    &__item-text {
+    // .features__content-label
+    &__content-label {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: math.div(21, 16);
+        color: #323232;
+        padding-bottom: rem(17);
+        
+    }
+    // .features__content-text
+    &__content-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: math.div(21, 14);
+        color: $grayColor;
+    }
+    // .features__reel
+    &__reel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
     }
     // .features__title
     &__title {
-        grid-area: title;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: math.div(50, 48);
+        color: $pinkColor;
     }
-    // .features__title-value
-    &__title-value {
-    }
-    // .features__picture
-    &__picture {
-        grid-area: picture;
-
+    // .features__reel-picture
+    &__reel-picture {
+        
         img {
-            width: 50%;
+            // position: relative;
+            // top: 0;
+            // left: -20px;
+            width: rem(980);
+
         }
     }
 }
-
-
